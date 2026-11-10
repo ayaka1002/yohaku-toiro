@@ -150,6 +150,15 @@ dialog::backdrop{background:var(--overlay)}
 .sheet h2{font-weight:500;font-size:clamp(22px,4vw,30px);line-height:1.55;letter-spacing:.04em;margin-bottom:22px;text-wrap:balance}
 .body{white-space:pre-wrap;font-size:14.5px;line-height:2.1;overflow-wrap:anywhere}
 .sheet .actions{margin-top:28px}
+.steps{display:grid;gap:26px;margin-top:30px}
+.step h3{font-size:16px;font-weight:700;letter-spacing:.04em;line-height:1.6}
+.step .lead{font-size:13px;color:var(--muted);margin-top:2px}
+.prompt{margin-top:10px;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 18px 16px}
+.prompt-head{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px;letter-spacing:.16em;color:var(--sage-deep);margin-bottom:6px}
+.prompt-head button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 12px;font-size:11px;letter-spacing:.04em;cursor:pointer;color:var(--sage-deep)}
+.prompt-head button:hover{border-color:var(--sage)}
+.prompt p{white-space:pre-wrap;font-size:14px;line-height:1.95;overflow-wrap:anywhere}
+.outro{margin-top:30px;padding-top:24px;border-top:1px dashed var(--line)}
 
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);background:var(--ink);color:var(--paper);padding:9px 18px;border-radius:999px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:30}
 .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -218,6 +227,8 @@ dialog::backdrop{background:var(--overlay)}
   <div class="card-top" id="dlgMeta"></div>
   <h2 id="dlgTitle"></h2>
   <div class="body" id="dlgBody"></div>
+  <div class="steps" id="dlgSteps"></div>
+  <div class="body outro" id="dlgOutro"></div>
   <div class="actions" id="dlgActions"></div>
 </div></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -229,9 +240,26 @@ const posts = [
       {id:"2026-09-17-goal-mindset",date:"2026-09-17",dateLabel:"9/17",month:"2026年9月",category:"目標・マインド",title:"目標設定＆マインドセット",summary:"これからのわたしを自分で選ぶ。目標設定が苦手な人にも向けた、ゆるく始めて、2回目にしっかり書き出すワークです。",body:"【目標設定＆マインドセット】\n\nこれからのわたしを、自分で選ぶ💫🪐\n「目標設定って苦手...💭」という人こそ見てほしい💡\n\nまずはゆるっと、2回目にしっかり書き出しながら、見てみてください🕊️\n\n📹20260910 アーカイブ\n\nパスコード: U!+M7d=g",links:[{label:"アーカイブを見る",url:"https://us06web.zoom.us/rec/share/tL03Vqu0jxULv1OriQv-vUwvHZbHy1tCLLVHwzucbwYH2JmOrwVd_I-DvzBhY4Ox.iELZek4Wr8EcP4hH"}]},
       {id:"2026-09-11-trial-reels",date:"2026-09-11",dateLabel:"9/11",month:"2026年9月",category:"テキスト配信",title:"トライアルリール、おすすめです",summary:"冒頭の違う動画を複数パターン試し、反応を見てから通常公開する方法。再生数以外の見方や、2段階で試す方法も紹介しています。",body:"【トライアルリール、おすすめです】\n\n今日のリール、夕方にトライアルリールを5本一気に回して、その中で一番伸びたものを3時間後に通常公開しました😚\n\nやり方はかなり簡単👇\n\n① 冒頭を5種類考える\nまず「伸びそうな冒頭」を5種類考えて台本を作る。冒頭以外の本編は全部共通でOK！\n\n② 冒頭だけ違う動画を5本作る\n動画編集もほぼ一緒で、冒頭部分だけ5パターン作る。キャプションも全部共通でOK。わたしはBGMだけそれぞれ変えてます！\n\n③ 5本まとめてトライアルリールに出す\n時間を空けずに、5本一気に出してOK！\n\n④ 一番反応がよかったものを通常公開する\nできれば1日くらい置いて数字を見た方が判断しやすいと思うんだけど、今日はもう時間がなくてその日のうちに公開したかったので、わたしは3時間くらいで判断しました！\n\n今日の場合、3時間くらいで\n・150回くらい\n・200回くらい\n・300回くらい\n・500回くらい\n・900回くらい\nという感じで結構差が出て、900回くらい回ってたものを採用して通常公開しました🙂‍↕️\n\nこれだけでも「自分ではこの冒頭がいいと思ってたけど、実際はこっちの方が反応いいんだ」って数字で判断できるので、普通に1本だけ出すよりかなり使えると思う💪✨\n\nあ、再生数だけじゃなくて、保存数、スキップ率、フォロー数とかももちろん見てるよ！\n\nBGMを変えてるのは、できるだけ同じ動画として認識されないようにするため😉\n冒頭とBGMが違えば、今のところわたしは5本出しても同じものとして扱われた感じはなかったです🙆\n\n逆に前に、過去に伸びたリールをリメイクして出そうと思って、冒頭の動画素材だけ変えて、アフレコとテロップはほぼ同じまま出したことがあって。そのときは過去の投稿と類似したコンテンツみたいな判定になって、全然伸びなかったことがありました🫠\n\nなので、過去投稿のリメイクと、同時にトライアルで複数パターンを試すのはちょっと分けて考えた方がいいかも🤔\n\nちなみに、もっとしっかり分析したい人は「2段階」でやるのもあり✊\n\n① まず冒頭の台本を5種類作ってトライアル\n② 一番伸びた台本を選ぶ\n③ 次はその台本のまま、冒頭の動画素材だけ5種類変えてもう一度トライアル\n④ さらに反応がよかったものを通常公開\n\nここまでやると、「言葉」と「映像」のどっちが強かったのかも見やすくなる🪿🍃\n\nあと、トライアルリールは通常公開したあとも消さなくて👌わたしはそのまま残してます☺️\n\nトライアルリールって、感覚としてはフォロワー外に出せる無料の広告みたいなものだと思ってて、通常公開しなくてもトライアル側で伸び続けることもあるし、そこからフォロワーが100人、200人と増えることもある🥹\n\n使ってない人もまだ結構いると思うけど、せっかく使える機能なので、リールを作るなら1本だけ作って感覚で公開するより、冒頭を何パターンか試して数字を見てから公開する使い方、かなりおすすめです🫶",links:[]}
     ];
+const CAT_MAP={"Instagram講座":"Instagram","テキスト配信":"Instagram"};
+posts.forEach(p=>{if(CAT_MAP[p.category])p.category=CAT_MAP[p.category]});
+posts.push(
+  {id:"2026-11-07-muse",date:"2026-11-07",dateLabel:"11/7",month:"2026年11月",category:"AI活用",title:"わたしのMuseの使い方",summary:"みんな、Muse使ってる？わたしの使い方を簡単にまとめました。みんなの使い方もぜひシェアしてください。",body:"みんな、Muse使ってる？🥐\n\nわたしの使い方を簡単にまとめました✍️\n\nみんなの使い方もぜひシェアして〜🌷",links:[{label:"使い方まとめを見る",url:"https://claude.ai/artifact/Uq16ZHUoKmJD2VAkhPAKRd"}]},
+  {id:"2026-09-23-less-is-more",date:"2026-09-23",dateLabel:"9/23",month:"2026年9月",category:"暮らし",title:"断捨離して、すっきり平日を迎える",summary:"シルバーウィーク最終日に向けて、断捨離のためのページを作りました。すっきりした気持ちで平日を迎えたい人へ。",body:"＼まだ間に合う！／\nシルバーウィーク最終日、断捨離してすっきり平日を迎えませんか？\n\nこんなもの作ってみました✍️",links:[{label:"ページを見る",url:"https://less-is-more.shirokuma-4333.chatgpt.site/"}]},
+  {id:"2026-09-11-self-analysis",date:"2026-09-11",dateLabel:"9/11",month:"2026年9月",category:"AI活用",title:"自己分析の最強プロンプト",summary:"ChatGPTに4つのSTEPを順番に聞いていく自己分析。外に見せている自分から、その奥の不安、抜け出すための行動までがつながって見えてきます。",
+   body:"これ、ぜひChatGPTで順番にやってみてほしい！\n自分では気づいてなかった「自分」がかなり見えてくる🪄\n\nポイントは、4つをまとめて聞かずに\nSTEP1から1つずつ聞いていくこと🗣️\n\nChatGPTに過去の会話や自分の情報がある程度蓄積されている人ほど、かなり深く分析してもらえます🪐",
+   steps:[
+    {title:"STEP1｜「見せている自分」と「本当の自分」を知る",lead:"",prompt:"私についてあなたがこれまで知っているすべてのことに基づいて、私が「演じている自分」と「実際の自分」を教えてください。\n表面的な性格ではなく、行動・選択・人間関係・仕事・感情のパターンから深く分析してください。"},
+    {title:"STEP2｜一番深い不安を知る",lead:"STEP1の回答を読んだあとに、そのまま続けて↓",prompt:"今の分析も含め、私について知っているすべてのことを踏まえて、容赦なく正直に、私の最も深いコンプレックスや不安は何だと思いますか？\n表面的な悩みではなく、その奥にある「本当は何を恐れているのか」まで掘り下げてください。"},
+    {title:"STEP3｜自分を止めている悪循環を知る",lead:"さらに続けて↓",prompt:"ここまでの分析をすべて踏まえて、私が無意識に囚われていて、自分の可能性を狭めている「悪循環」を1つだけ挙げてください。\nどんな出来事をきっかけに、何を考え、どう行動し、その結果どうなり、また同じ状態に戻っているのか、循環がわかるように教えてください。"},
+    {title:"STEP4｜人生を変える「1つ」を決める",lead:"最後に↓",prompt:"ここまでの分析をすべて踏まえて、この悪循環を今から断ち切った場合、私の人生は1年後・5年後・10年後にどう変わっていると思いますか？\nその未来に近づくために、次の30日間で私がやるべき「最も影響力の大きい1つのこと」だけを決めてください。"}
+   ],
+   outro:"これのおもしろいところは\n「自分の長所・短所を教えて」みたいな自己分析じゃなくて\n\n・外に見せている自分\n・その奥にある不安\n・不安から生まれている行動パターン\n・そこから抜けるための行動\n\nまで全部つながって見えること💫\n\nできれば、答えを読んで終わりじゃなく\n「それは違う」「ここはめちゃくちゃ当たってる」もChatGPTに素直に（重要！）返しながら進めると、さらに自分に合った分析になっていきます🧚",
+   links:[]},
+  {id:"2026-08-27-codex-lp",date:"2026-08-27",dateLabel:"8/27",month:"2026年8月",category:"AI活用",title:"CodexでLPをつくる方法",summary:"Codexで作れる方法をnoteにまとめました。クライアントワークで「説明のためのページ」を提案すると、印象がぐっと上がります。",body:"LPつくりたい人いますか？\n\nCodexで作れる方法まとめてみました🫶\nnoteで販売してみたんだけど、ここのみんなには下書き共有する！\n\nクライアントワークでちょっとした「説明のためのページ」が欲しい時、使えます！\n\n「こんなの作って」と言われる前に、というかクライアントはそういうのが作れる、とすら思ってなかったりするから、「こんなの作りました」って提案すると、めちゃくちゃ印象UPです✊❤️‍🔥",links:[{label:"noteで読む",url:"https://note.com/preview/n1ee3c41ab7a8?prev_access_key=90ff76e52a7e80ec1d1c138b1d063e98"}]}
+);
 posts.forEach(p=>{const pass=p.body.match(/^パスコード:\s*(.+)$/m);if(pass){const archive=(p.links||[]).find(x=>x.label==="アーカイブを見る");if(archive)archive.passcode=pass[1]}p.body=p.body.replace(/^【[^】]+】\n\n/,"").replace(/^▼.*(?:\n|$)/gm,"").replace(/^📹.*アーカイブ.*(?:\n|$)/gm,"").replace(/^パスコード:.*(?:\n|$)/gm,"").replace(/\n{3,}/g,"\n\n").trim()});
 
-const CATS=["すべて","Instagram講座","テキスト配信","目標・マインド"];
+const CATS=["すべて","Instagram","AI活用","暮らし","目標・マインド"];
 const SAVED_KEY="yt-archive-saved-v1";
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -262,7 +290,7 @@ function renderChips(){
 }
 function visible(){
   const q=query.trim().toLowerCase();
-  return sorted.filter(p=>(savedOnly?saved.has(p.id):(cat==="すべて"||p.category===cat))&&(!q||`${p.title} ${p.summary} ${p.body} ${p.category}`.toLowerCase().includes(q)));
+  return sorted.filter(p=>(savedOnly?saved.has(p.id):(cat==="すべて"||p.category===cat))&&(!q||`${p.title} ${p.summary} ${p.body} ${p.outro||""} ${(p.steps||[]).map(s=>s.title+" "+s.prompt).join(" ")} ${p.category}`.toLowerCase().includes(q)));
 }
 function linkBtns(p,inSheet){
   const links=p.links||[];
@@ -271,7 +299,7 @@ function linkBtns(p,inSheet){
     return `<a class="btn${isArc?" primary":""}" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${isArc?icon.play:icon.ext}${esc(x.label)}</a>`+
       (x.passcode?`<span class="pass">パスコード <code>${esc(x.passcode)}</code><button type="button" class="copy" data-code="${esc(x.passcode)}">コピー</button></span>`:"");
   }).join("");
-  if(!inSheet&&p.body)h+=`<button type="button" class="btn quiet open" data-id="${p.id}">${icon.read}${links.length?"本文を読む":"内容を読む"}</button>`;
+  if(!inSheet&&p.body)h+=`<button type="button" class="btn quiet open" data-id="${p.id}">${icon.read}${p.steps?"プロンプトを見る":links.length?"本文を読む":"内容を読む"}</button>`;
   return h;
 }
 function card(p,showNew){
@@ -298,6 +326,10 @@ function openPost(id){
   $("dlgMeta").innerHTML=`<time class="date" datetime="${p.date}">${fmtDate(p.date)}</time><span class="tag">${esc(p.category)}</span>`;
   $("dlgTitle").textContent=p.title;
   $("dlgBody").textContent=p.body;
+  const st=p.steps||[];
+  $("dlgSteps").innerHTML=st.map((s,i)=>`<section class="step"><h3>${esc(s.title)}</h3>${s.lead?`<p class="lead">${esc(s.lead)}</p>`:""}<div class="prompt"><div class="prompt-head"><span>PROMPT</span><button type="button" class="copy-prompt" data-step="${i}">コピー</button></div><p id="prompt-${i}">${esc(s.prompt)}</p></div></section>`).join("");
+  $("dlgSteps").hidden=!st.length;$("dlgSteps").dataset.id=p.id;
+  $("dlgOutro").textContent=p.outro||"";$("dlgOutro").hidden=!p.outro;
   const acts=linkBtns(p,true);
   $("dlgActions").innerHTML=acts;$("dlgActions").hidden=!acts;
   const d=$("dlg");if(d.showModal)d.showModal();else d.setAttribute("open","");
@@ -305,9 +337,9 @@ function openPost(id){
 }
 function closePost(){const d=$("dlg");if(d.close)d.close();else d.removeAttribute("open")}
 let tt;function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),1800)}
-async function copy(text){
-  try{await navigator.clipboard.writeText(text);toast("パスコードをコピーしました")}
-  catch(e){const r=document.createRange(),el=[...document.querySelectorAll(".pass code")].find(c=>c.textContent===text);if(el){r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}toast("選択したのでコピーしてください")}
+async function copy(text,el,msg){
+  try{await navigator.clipboard.writeText(text);toast(msg)}
+  catch(e){if(el){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}toast("選択したので、長押しでコピーしてください")}
 }
 
 document.addEventListener("click",e=>{
@@ -316,7 +348,8 @@ document.addEventListener("click",e=>{
   if(t.closest("#savedChip")){savedOnly=!savedOnly;render();return}
   const s=t.closest(".save");if(s){const id=s.dataset.id;saved.has(id)?saved.delete(id):saved.add(id);storeSaved();render();toast(saved.has(id)?"保存しました（このブラウザに残ります）":"保存を解除しました");return}
   const o=t.closest(".open");if(o){openPost(o.dataset.id);return}
-  const cp=t.closest(".copy");if(cp){copy(cp.dataset.code);return}
+  const cp=t.closest(".copy");if(cp){copy(cp.dataset.code,cp.previousElementSibling,"パスコードをコピーしました");return}
+  const pr=t.closest(".copy-prompt");if(pr){const p=posts.find(x=>x.id===$("dlgSteps").dataset.id),i=+pr.dataset.step;copy(p.steps[i].prompt,$("prompt-"+i),`STEP${i+1}のプロンプトをコピーしました`);return}
   const m=t.closest(".month-btn");if(m){const k=m.dataset.month;collapsed.has(k)?collapsed.delete(k):collapsed.add(k);render();return}
 });
 $("search").addEventListener("input",e=>{query=e.target.value;render()});
