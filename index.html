@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>yohaku toiro メンバーサイト</title>
+<meta name="description" content="yohaku toiroのメンバーサイト。配信アーカイブや講座、ワークシート、読みものをいつでも振り返れます。">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#f6f3ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1f1b" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="yohaku toiro メンバーサイト">
+<meta property="og:description" content="配信アーカイブや講座、ワークシートを、いつでも見返せる場所です。">
+<meta property="og:image" content="https://ayaka1002.github.io/yohaku-toiro/ogp.png">
+<meta property="og:url" content="https://ayaka1002.github.io/yohaku-toiro/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235f705a'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23f6f3ed'%3Eyt%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: quiet paper page, one column of month-grouped cards; the "ten colors" strip is the brand's single flourish. */
+:root{
+  --paper:#f6f3ed;--surface:#fffdf8;--ink:#33372f;--muted:#72776c;--line:#e2ddd2;
+  --sage:#8d9b88;--sage-deep:#5f705a;--tint:#eaeee5;--blush:#c99a8c;--blush-tint:#f8eee9;
+  --overlay:rgba(36,40,34,.55);--shadow:0 14px 36px rgba(55,59,50,.08);
+  --t1:#8d9b88;--t2:#d4b2a6;--t3:#d9c7a3;--t4:#9fb3bd;--t5:#b4a9bf;--t6:#c7a76b;--t7:#6f8466;--t8:#b98575;--t9:#7d8a93;--t10:#e1d8c8;
+  --display:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
+  --sans:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#1c1f1b;--surface:#252923;--ink:#e8e6de;--muted:#a3a89c;--line:#373c35;
+  --sage:#9fb099;--sage-deep:#b3c4ab;--tint:#2d342b;--blush:#d6a999;--blush-tint:#3a2e2a;
+  --overlay:rgba(8,10,8,.7);--shadow:0 14px 36px rgba(0,0,0,.3);
+  --t10:#8d8577;color-scheme:dark;
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.9;letter-spacing:.03em;padding-bottom:env(safe-area-inset-bottom,0px)}
+button,input{font:inherit;color:inherit}
+a{color:var(--sage-deep);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--sage-deep);outline-offset:3px;border-radius:4px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{word-break:auto-phrase}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* header */
+.top{padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;gap:20px;padding-block:22px}
+.wordmark{font-family:var(--display);font-style:italic;font-weight:500;font-size:26px;letter-spacing:.02em;color:var(--ink);text-decoration:none;line-height:1}
+.nav{margin-left:auto;display:flex;gap:22px;font-size:12px;letter-spacing:.12em}
+.nav a{color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero .wrap{padding-block:64px 52px;display:grid;gap:22px}
+.eyebrow{font-size:11px;letter-spacing:.24em;color:var(--sage-deep);text-transform:uppercase}
+.hero h1{font-weight:500;font-size:clamp(30px,5.4vw,52px);line-height:1.45;letter-spacing:.05em;text-wrap:balance}
+.hero h1 .en{display:block;font-family:var(--display);font-style:italic;font-weight:500;font-size:1.25em;letter-spacing:.01em;line-height:1.1;margin-bottom:6px}
+.lead{color:var(--muted);max-width:34em}
+.toiro{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:6px}
+.toiro-dots{display:flex;gap:7px}
+.toiro-dots span{width:14px;height:14px;border-radius:50%;background:var(--c)}
+.toiro-label{font-size:11px;color:var(--muted);letter-spacing:.14em}
+.meta-row{display:flex;gap:28px;flex-wrap:wrap;padding-top:22px;margin-top:6px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.meta-row b{display:block;font-family:var(--display);font-weight:500;font-size:30px;color:var(--ink);line-height:1.2;font-variant-numeric:tabular-nums;letter-spacing:0}
+
+/* toolbar */
+.toolbar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-block:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.toolbar .wrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding-block:14px}
+.search{position:relative;flex:1 1 240px;min-width:0}
+.search svg{position:absolute;left:13px;top:50%;width:16px;height:16px;transform:translateY(-50%);color:var(--muted)}
+.search input{width:100%;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:10px 16px 10px 38px;outline:none;font-size:14px}
+.search input:focus{border-color:var(--sage)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:transparent;border-radius:999px;padding:7px 14px;font-size:12px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;white-space:nowrap}
+.chip:hover{border-color:var(--sage)}
+.chip[aria-pressed="true"]{background:var(--sage-deep);border-color:var(--sage-deep);color:var(--paper)}
+.chip svg{width:11px;height:13px;vertical-align:-1px;margin-right:5px}
+
+/* archive */
+.archive .wrap{padding-block:44px 80px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:22px}
+.sec-head h2{font-weight:500;font-size:24px;letter-spacing:.06em}
+.sec-head .en{font-family:var(--display);font-style:italic;font-size:15px;color:var(--muted);margin-left:12px;letter-spacing:.02em}
+.count{font-size:12px;color:var(--muted)}
+.month+.month{margin-top:36px}
+.month-btn{width:100%;display:flex;align-items:center;gap:14px;border:0;border-bottom:1px solid var(--line);background:none;padding:10px 0;cursor:pointer;text-align:left}
+.month-btn .m{font-weight:500;font-size:18px;letter-spacing:.06em}
+.month-btn .n{font-size:11px;color:var(--muted)}
+.month-btn .chev{margin-left:auto;color:var(--sage-deep);transition:transform .2s;width:14px;height:14px}
+.month-btn[aria-expanded="false"] .chev{transform:rotate(-90deg)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding-top:18px}
+
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px 24px 20px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:box-shadow .25s,transform .25s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.card.is-new{grid-column:1/-1;padding:30px 32px 24px}
+.card-top{display:flex;align-items:center;gap:12px}
+.date{font-family:var(--display);font-weight:500;font-size:22px;line-height:1;letter-spacing:.02em;font-variant-numeric:tabular-nums;color:var(--ink)}
+.tag{font-size:11px;color:var(--sage-deep);background:var(--tint);border-radius:999px;padding:3px 11px;letter-spacing:.06em;white-space:nowrap}
+.new{font-size:10px;letter-spacing:.2em;color:var(--blush);border:1px solid currentColor;border-radius:999px;padding:1px 9px}
+.save{margin-left:auto;width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:transparent;cursor:pointer;color:var(--muted);transition:.2s;flex:none}
+.save svg{width:13px;height:16px}
+.save svg path{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
+.save:hover{color:var(--sage-deep);border-color:var(--sage)}
+.save[aria-pressed="true"]{color:var(--sage-deep);border-color:var(--sage);background:var(--tint)}
+.save[aria-pressed="true"] svg path{fill:currentColor}
+.card h3{font-weight:500;font-size:20px;line-height:1.6;letter-spacing:.04em;text-wrap:balance}
+.card.is-new h3{font-size:clamp(22px,3vw,27px)}
+.desc{color:var(--muted);font-size:13.5px;line-height:1.95}
+.card.is-new .desc{max-width:44em}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
+.btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:12.5px;text-decoration:none;color:var(--ink);background:transparent;cursor:pointer;transition:.2s;white-space:nowrap}
+.btn svg{width:12px;height:12px;flex:none}
+.btn:hover{border-color:var(--sage-deep);color:var(--sage-deep)}
+.btn.primary{background:var(--sage-deep);border-color:var(--sage-deep);color:var(--paper)}
+.btn.primary:hover{opacity:.88;color:var(--paper)}
+.btn.quiet{border-color:transparent;color:var(--sage-deep);padding-inline:6px}
+.btn.quiet:hover{text-decoration:underline}
+.pass{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 5px 4px 13px;background:var(--paper);max-width:100%}
+.pass code{font-family:var(--mono);font-size:12.5px;color:var(--ink);letter-spacing:.04em}
+.pass button{border:0;background:var(--surface);border-radius:999px;padding:3px 11px;font-size:11px;cursor:pointer;color:var(--sage-deep);border:1px solid var(--line)}
+.pass button:hover{border-color:var(--sage)}
+.empty{padding:56px 20px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:6px}
+
+/* reading */
+.reading .wrap{padding-block:0 84px}
+.read-card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;padding:28px 30px;background:var(--surface);border:1px solid var(--line);border-radius:6px;text-decoration:none;color:var(--ink);transition:box-shadow .25s,border-color .25s}
+.read-card:hover{border-color:var(--sage);box-shadow:var(--shadow)}
+.read-mark{width:52px;height:52px;border-radius:50%;background:var(--blush-tint);display:grid;place-items:center;color:var(--blush)}
+.read-mark svg{width:22px;height:22px}
+.read-card h3{font-weight:500;font-size:18px;letter-spacing:.04em;margin-bottom:2px}
+.read-card p{font-size:13px;color:var(--muted)}
+.read-go{font-size:12px;color:var(--sage-deep);white-space:nowrap}
+
+/* footer */
+.foot{border-top:1px solid var(--line)}
+.foot .wrap{padding-block:34px 44px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+.foot .wordmark{font-size:22px}
+.foot .tagline{margin-left:auto;letter-spacing:.1em}
+
+/* dialog */
+dialog{border:0;padding:0;background:transparent;max-width:min(720px,calc(100% - 24px));width:100%;max-height:calc(100dvh - 24px);color:var(--ink)}
+dialog::backdrop{background:var(--overlay)}
+.sheet{background:var(--surface);border-radius:8px;padding:clamp(24px,5vw,48px);max-height:calc(100dvh - 24px);overflow:auto;position:relative}
+.close{position:sticky;top:0;float:right;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:18px;line-height:1;margin:-8px -8px 0 12px}
+.sheet .card-top{margin-bottom:14px}
+.sheet h2{font-weight:500;font-size:clamp(22px,4vw,30px);line-height:1.55;letter-spacing:.04em;margin-bottom:22px;text-wrap:balance}
+.body{white-space:pre-wrap;font-size:14.5px;line-height:2.1;overflow-wrap:anywhere}
+.sheet .actions{margin-top:28px}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);background:var(--ink);color:var(--paper);padding:9px 18px;border-radius:999px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:30}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:720px){
+  body{font-size:14.5px}
+  .nav{gap:16px;font-size:11px}
+  .hero .wrap{padding-block:40px 40px}
+  .toolbar .wrap{gap:10px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:2px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .grid{grid-template-columns:1fr;gap:12px}
+  .card,.card.is-new{padding:20px 20px 18px}
+  .read-card{grid-template-columns:1fr;gap:12px;padding:22px}
+  .read-mark{width:42px;height:42px}
+  .foot .tagline{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="wordmark" href="#top">yohaku toiro</a>
+  <nav class="nav" aria-label="ページ内"><a href="#archive">ARCHIVE</a><a href="#reading">READING</a></nav>
+</div></header>
+
+<main id="top">
+  <section class="hero"><div class="wrap">
+    <span class="eyebrow">Member's site</span>
+    <h1><span class="en">yohaku toiro</span>メンバーサイト</h1>
+    <p class="lead">日々の配信や講座、ワークシートを、いつでも見返せる場所です。気になる回は保存しておけば、あとからすぐ開けます。</p>
+    <div class="toiro" aria-hidden="true">
+      <div class="toiro-dots"><span style="--c:var(--t1)"></span><span style="--c:var(--t2)"></span><span style="--c:var(--t3)"></span><span style="--c:var(--t4)"></span><span style="--c:var(--t5)"></span><span style="--c:var(--t6)"></span><span style="--c:var(--t7)"></span><span style="--c:var(--t8)"></span><span style="--c:var(--t9)"></span><span style="--c:var(--t10)"></span></div>
+      <span class="toiro-label">十人十色の、余白と暮らし。</span>
+    </div>
+    <div class="meta-row" id="metaRow"></div>
+  </div></section>
+
+  <section class="toolbar" aria-label="アーカイブを探す"><div class="wrap">
+    <label class="search"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><input id="search" type="search" placeholder="タイトルや内容から探す" aria-label="タイトルや内容から探す"></label>
+    <div class="chips" id="chips"></div>
+  </div></section>
+
+  <section class="archive" id="archive"><div class="wrap">
+    <div class="sec-head"><h2>配信アーカイブ<span class="en">Archive</span></h2><span class="count" id="count"></span></div>
+    <div id="list"></div>
+  </div></section>
+
+  <section class="reading" id="reading"><div class="wrap">
+    <div class="sec-head"><h2>読みもの<span class="en">Reading</span></h2></div>
+    <a class="read-card" href="https://ayaka-knowledge-library.shirokuma-4333.chatgpt.site/articles" target="_blank" rel="noopener noreferrer">
+      <span class="read-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M3 5.5c3-1.3 6-1.3 9 .5v13c-3-1.8-6-1.8-9-.5zM21 5.5c-3-1.3-6-1.3-9 .5v13c3-1.8 6-1.8 9-.5z"/></svg></span>
+      <div><h3>感じたことを、これからのヒントに。</h3><p>仕事、発信、暮らしのなかで感じたことや考えたことを記事にまとめています。</p></div>
+      <span class="read-go">記事一覧を読む ↗</span>
+    </a>
+  </div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span class="wordmark">yohaku toiro</span>
+  <span class="tagline">暮らしと働き方を、わたしらしく。</span>
+</div></footer>
+
+<dialog id="dlg" aria-labelledby="dlgTitle"><div class="sheet">
+  <button class="close" id="dlgClose" type="button" aria-label="閉じる">×</button>
+  <div class="card-top" id="dlgMeta"></div>
+  <h2 id="dlgTitle"></h2>
+  <div class="body" id="dlgBody"></div>
+  <div class="actions" id="dlgActions"></div>
+</div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const posts = [
+      {id:"2026-10-31-strength-values",date:"2026-10-31",dateLabel:"10/31",month:"2026年10月",category:"Instagram講座",title:"強み・価値観・発信テーマ",summary:"Instagram講座の2回目。自分の強みや価値観を見つめ、発信テーマを考える回です。ワークシートとスライドも一緒に見返せます。",body:"【強み・価値観・発信テーマ】\n\nInstagram講座2回目\n今回もワークをご用意しているので、ぜひやってみてください〜！🌷\n\n▼アーカイブ\nパスコード: NYOeVc?7\n\n▼スライド",links:[{label:"アーカイブを見る",url:"https://us06web.zoom.us/rec/share/Ykdhz2zMrlTEz-808-kUqUw2-yva8xJpNr5m8CLVRe-p7Yx7QFS7cFDrbux5GfOY.Y76QmICrrXZ8Fyea"},{label:"スライドを見る",url:"https://drive.google.com/file/d/1SH4oyZzOyoE85Q1l4lqU29Qo443tEtU4/view"}]},
+      {id:"2026-09-17-instagram-lecture-1",date:"2026-09-17",dateLabel:"9/17",month:"2026年9月",category:"Instagram講座",title:"選ばれる発信のための設計図",summary:"クライアントワークをする人こそ、自分らしさが伝わるInstagramの発信を。Instagram講座の第1回とワークシートです。",body:"【選ばれる発信のための設計図】\n\nクライアントワークをする人こそ、自分らしさが伝わるInstagramの発信を🪽🫧\n\nInstagram講座の第1回目です📹\n\nワークシートもあわせて、ぜひやってみてください✍️\n\n▼20260917 アーカイブ\nパスコード: @4e60jym\n\n▼ワークシート",links:[{label:"アーカイブを見る",url:"https://us06web.zoom.us/rec/share/OHi2Az7JvYWNJFrJLPgK0PLxz83Pbj8PiloOjshAcxdI7YMpcWwFfeIKA-chhdNe.t0uIqOjwCv-zxYgQ"},{label:"ワークシートを開く",url:"https://docs.google.com/spreadsheets/d/1QOuQu23e00frf1HOWzPvgoy3M3T7jnH6znShjKac_iI/edit"}]},
+      {id:"2026-09-17-goal-mindset",date:"2026-09-17",dateLabel:"9/17",month:"2026年9月",category:"目標・マインド",title:"目標設定＆マインドセット",summary:"これからのわたしを自分で選ぶ。目標設定が苦手な人にも向けた、ゆるく始めて、2回目にしっかり書き出すワークです。",body:"【目標設定＆マインドセット】\n\nこれからのわたしを、自分で選ぶ💫🪐\n「目標設定って苦手...💭」という人こそ見てほしい💡\n\nまずはゆるっと、2回目にしっかり書き出しながら、見てみてください🕊️\n\n📹20260910 アーカイブ\n\nパスコード: U!+M7d=g",links:[{label:"アーカイブを見る",url:"https://us06web.zoom.us/rec/share/tL03Vqu0jxULv1OriQv-vUwvHZbHy1tCLLVHwzucbwYH2JmOrwVd_I-DvzBhY4Ox.iELZek4Wr8EcP4hH"}]},
+      {id:"2026-09-11-trial-reels",date:"2026-09-11",dateLabel:"9/11",month:"2026年9月",category:"テキスト配信",title:"トライアルリール、おすすめです",summary:"冒頭の違う動画を複数パターン試し、反応を見てから通常公開する方法。再生数以外の見方や、2段階で試す方法も紹介しています。",body:"【トライアルリール、おすすめです】\n\n今日のリール、夕方にトライアルリールを5本一気に回して、その中で一番伸びたものを3時間後に通常公開しました😚\n\nやり方はかなり簡単👇\n\n① 冒頭を5種類考える\nまず「伸びそうな冒頭」を5種類考えて台本を作る。冒頭以外の本編は全部共通でOK！\n\n② 冒頭だけ違う動画を5本作る\n動画編集もほぼ一緒で、冒頭部分だけ5パターン作る。キャプションも全部共通でOK。わたしはBGMだけそれぞれ変えてます！\n\n③ 5本まとめてトライアルリールに出す\n時間を空けずに、5本一気に出してOK！\n\n④ 一番反応がよかったものを通常公開する\nできれば1日くらい置いて数字を見た方が判断しやすいと思うんだけど、今日はもう時間がなくてその日のうちに公開したかったので、わたしは3時間くらいで判断しました！\n\n今日の場合、3時間くらいで\n・150回くらい\n・200回くらい\n・300回くらい\n・500回くらい\n・900回くらい\nという感じで結構差が出て、900回くらい回ってたものを採用して通常公開しました🙂‍↕️\n\nこれだけでも「自分ではこの冒頭がいいと思ってたけど、実際はこっちの方が反応いいんだ」って数字で判断できるので、普通に1本だけ出すよりかなり使えると思う💪✨\n\nあ、再生数だけじゃなくて、保存数、スキップ率、フォロー数とかももちろん見てるよ！\n\nBGMを変えてるのは、できるだけ同じ動画として認識されないようにするため😉\n冒頭とBGMが違えば、今のところわたしは5本出しても同じものとして扱われた感じはなかったです🙆\n\n逆に前に、過去に伸びたリールをリメイクして出そうと思って、冒頭の動画素材だけ変えて、アフレコとテロップはほぼ同じまま出したことがあって。そのときは過去の投稿と類似したコンテンツみたいな判定になって、全然伸びなかったことがありました🫠\n\nなので、過去投稿のリメイクと、同時にトライアルで複数パターンを試すのはちょっと分けて考えた方がいいかも🤔\n\nちなみに、もっとしっかり分析したい人は「2段階」でやるのもあり✊\n\n① まず冒頭の台本を5種類作ってトライアル\n② 一番伸びた台本を選ぶ\n③ 次はその台本のまま、冒頭の動画素材だけ5種類変えてもう一度トライアル\n④ さらに反応がよかったものを通常公開\n\nここまでやると、「言葉」と「映像」のどっちが強かったのかも見やすくなる🪿🍃\n\nあと、トライアルリールは通常公開したあとも消さなくて👌わたしはそのまま残してます☺️\n\nトライアルリールって、感覚としてはフォロワー外に出せる無料の広告みたいなものだと思ってて、通常公開しなくてもトライアル側で伸び続けることもあるし、そこからフォロワーが100人、200人と増えることもある🥹\n\n使ってない人もまだ結構いると思うけど、せっかく使える機能なので、リールを作るなら1本だけ作って感覚で公開するより、冒頭を何パターンか試して数字を見てから公開する使い方、かなりおすすめです🫶",links:[]}
+    ];
+posts.forEach(p=>{const pass=p.body.match(/^パスコード:\s*(.+)$/m);if(pass){const archive=(p.links||[]).find(x=>x.label==="アーカイブを見る");if(archive)archive.passcode=pass[1]}p.body=p.body.replace(/^【[^】]+】\n\n/,"").replace(/^▼.*(?:\n|$)/gm,"").replace(/^📹.*アーカイブ.*(?:\n|$)/gm,"").replace(/^パスコード:.*(?:\n|$)/gm,"").replace(/\n{3,}/g,"\n\n").trim()});
+
+const CATS=["すべて","Instagram講座","テキスト配信","目標・マインド"];
+const SAVED_KEY="yt-archive-saved-v1";
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const icon={
+  ext:'<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4.5 2H10v5.5M10 2L2.5 9.5"/></svg>',
+  play:'<svg viewBox="0 0 12 12" fill="currentColor"><path d="M3 1.8v8.4L10 6z"/></svg>',
+  read:'<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2 3h8M2 6h8M2 9h5"/></svg>',
+  bm:'<svg viewBox="0 0 16 20" aria-hidden="true"><path d="M3 2.5h10v15l-5-3.5-5 3.5z"/></svg>',
+  chev:'<svg class="chev" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l4 4 4-4"/></svg>'
+};
+let saved=new Set();try{saved=new Set(JSON.parse(localStorage.getItem(SAVED_KEY)||"[]"))}catch(e){}
+let cat="すべて",savedOnly=false,query="";
+const collapsed=new Set();
+const sorted=[...posts].sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));
+const newestId=sorted[0]&&sorted[0].id;
+const fmtDate=d=>{const [y,m,day]=d.split("-");return `${+m}.${day}`};
+
+function storeSaved(){try{localStorage.setItem(SAVED_KEY,JSON.stringify([...saved]))}catch(e){}}
+
+function renderMeta(){
+  const latest=sorted[0];
+  const cats=new Set(posts.map(p=>p.category)).size;
+  $("metaRow").innerHTML=`<div><b>${posts.length}</b>配信アーカイブ</div><div><b>${cats}</b>カテゴリ</div>${latest?`<div><b>${fmtDate(latest.date)}</b>最新の配信</div>`:""}`;
+}
+function renderChips(){
+  $("chips").innerHTML=CATS.map(c=>`<button type="button" class="chip" data-cat="${esc(c)}" aria-pressed="${!savedOnly&&cat===c}">${esc(c)}</button>`).join("")+
+  `<button type="button" class="chip" id="savedChip" aria-pressed="${savedOnly}">${icon.bm.replace('aria-hidden="true"','aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"')}保存したもの${saved.size?`（${saved.size}）`:""}</button>`;
+}
+function visible(){
+  const q=query.trim().toLowerCase();
+  return sorted.filter(p=>(savedOnly?saved.has(p.id):(cat==="すべて"||p.category===cat))&&(!q||`${p.title} ${p.summary} ${p.body} ${p.category}`.toLowerCase().includes(q)));
+}
+function linkBtns(p,inSheet){
+  const links=p.links||[];
+  let h=links.map((x,i)=>{
+    const isArc=x.label==="アーカイブを見る";
+    return `<a class="btn${isArc?" primary":""}" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${isArc?icon.play:icon.ext}${esc(x.label)}</a>`+
+      (x.passcode?`<span class="pass">パスコード <code>${esc(x.passcode)}</code><button type="button" class="copy" data-code="${esc(x.passcode)}">コピー</button></span>`:"");
+  }).join("");
+  if(!inSheet&&p.body)h+=`<button type="button" class="btn quiet open" data-id="${p.id}">${icon.read}${links.length?"本文を読む":"内容を読む"}</button>`;
+  return h;
+}
+function card(p,showNew){
+  const isNew=showNew&&p.id===newestId;
+  return `<article class="card${isNew?" is-new":""}">
+    <div class="card-top"><time class="date" datetime="${p.date}">${fmtDate(p.date)}</time><span class="tag">${esc(p.category)}</span>${isNew?'<span class="new">NEW</span>':""}
+      <button type="button" class="save" data-id="${p.id}" aria-pressed="${saved.has(p.id)}" aria-label="${saved.has(p.id)?"保存を解除":"保存する"}">${icon.bm}</button></div>
+    <h3>${esc(p.title)}</h3>
+    <p class="desc">${esc(p.summary)}</p>
+    <div class="actions">${linkBtns(p,false)}</div>
+  </article>`;
+}
+function render(){
+  renderChips();
+  const list=visible();
+  $("count").textContent=`${list.length}件`;
+  if(!list.length){$("list").innerHTML=`<div class="empty">${savedOnly?"まだ保存した配信はありません。カードの右上のしおりで保存できます。":"該当する配信が見つかりませんでした。"}</div>`;return}
+  const showNew=!savedOnly&&cat==="すべて"&&!query.trim();
+  const groups=new Map();list.forEach(p=>{if(!groups.has(p.month))groups.set(p.month,[]);groups.get(p.month).push(p)});
+  $("list").innerHTML=[...groups].map(([m,items])=>{const open=!collapsed.has(m);return `<section class="month"><button type="button" class="month-btn" data-month="${esc(m)}" aria-expanded="${open}"><span class="m">${esc(m)}</span><span class="n">${items.length}件</span>${icon.chev}</button><div class="grid"${open?"":" hidden"}>${items.map(p=>card(p,showNew)).join("")}</div></section>`}).join("");
+}
+function openPost(id){
+  const p=posts.find(x=>x.id===id);if(!p)return;
+  $("dlgMeta").innerHTML=`<time class="date" datetime="${p.date}">${fmtDate(p.date)}</time><span class="tag">${esc(p.category)}</span>`;
+  $("dlgTitle").textContent=p.title;
+  $("dlgBody").textContent=p.body;
+  const acts=linkBtns(p,true);
+  $("dlgActions").innerHTML=acts;$("dlgActions").hidden=!acts;
+  const d=$("dlg");if(d.showModal)d.showModal();else d.setAttribute("open","");
+  d.querySelector(".sheet").scrollTop=0;
+}
+function closePost(){const d=$("dlg");if(d.close)d.close();else d.removeAttribute("open")}
+let tt;function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),1800)}
+async function copy(text){
+  try{await navigator.clipboard.writeText(text);toast("パスコードをコピーしました")}
+  catch(e){const r=document.createRange(),el=[...document.querySelectorAll(".pass code")].find(c=>c.textContent===text);if(el){r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}toast("選択したのでコピーしてください")}
+}
+
+document.addEventListener("click",e=>{
+  const t=e.target;
+  const c=t.closest("[data-cat]");if(c){cat=c.dataset.cat;savedOnly=false;render();return}
+  if(t.closest("#savedChip")){savedOnly=!savedOnly;render();return}
+  const s=t.closest(".save");if(s){const id=s.dataset.id;saved.has(id)?saved.delete(id):saved.add(id);storeSaved();render();toast(saved.has(id)?"保存しました（このブラウザに残ります）":"保存を解除しました");return}
+  const o=t.closest(".open");if(o){openPost(o.dataset.id);return}
+  const cp=t.closest(".copy");if(cp){copy(cp.dataset.code);return}
+  const m=t.closest(".month-btn");if(m){const k=m.dataset.month;collapsed.has(k)?collapsed.delete(k):collapsed.add(k);render();return}
+});
+$("search").addEventListener("input",e=>{query=e.target.value;render()});
+$("dlgClose").addEventListener("click",closePost);
+$("dlg").addEventListener("click",e=>{if(e.target===$("dlg"))closePost()});
+renderMeta();render();
+</script>
+</body>
+</html>
